@@ -6,11 +6,12 @@ import Routes from './routes'
 import './styles/globalStyles.css'
 import * as serviceWorker from './utils/serviceWorker'
 import CryptoContainer from './containers/CryptoContainer'
+import NavBar from './components/NavBar'
 
 render(
   <Provider store={store}>
-    <Routes />
     <>
+      <NavBar />
       <CryptoContainer />
     </>
   </Provider>,
