@@ -5,10 +5,14 @@ import store from './store'
 import Routes from './routes'
 import './styles/globalStyles.css'
 import * as serviceWorker from './utils/serviceWorker'
+import CryptoContainer from './containers/CryptoContainer'
 
 render(
   <Provider store={store}>
     <Routes />
+    <>
+      <CryptoContainer />
+    </>
   </Provider>,
   document.getElementById('root'),
 )
