@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Currency from '../components/Currency'
+import { StyledEngineProvider } from '@mui/material/styles'
+import CurrencyList from '../components/CurrencyList'
+import CurrencyCard from '../components/CurrencyCard'
 
 function CryptoContainer() {
   const [currencies, setCurrencies] = useState([])
@@ -8,13 +11,17 @@ function CryptoContainer() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCurrencies(data))
-      .catch((error) => console.log('Error:', error))
+      .catch((error) => console.log('Error>>:', error))
   }, [])
   console.log(currencies)
 
   return (
     <div>
-      <Currency currencies={currencies} />
+      <Currency currencies={currencies} />;
+      <StyledEngineProvider injectFirst>
+        <CurrencyList currencies={currencies} />
+        <CurrencyCard currencies={currencies} />
+      </StyledEngineProvider>
     </div>
   )
 }
