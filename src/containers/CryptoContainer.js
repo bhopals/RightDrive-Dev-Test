@@ -11,7 +11,7 @@ function CryptoContainer() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCurrencies(data))
-      .catch((error) => console.log('Error>>>>>:', error))
+      .catch((error) => console.log('Error>>>>>>>:', error))
   }, [])
   console.log(currencies)
 
